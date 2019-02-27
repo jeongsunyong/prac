@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+cd ~
+grep -F -b ~ .bashrc > .bashrc.tmp
+mv -f .bashrc .bashrc.bak
+mv .bashrc.tmp .bashrc
+cd 
+

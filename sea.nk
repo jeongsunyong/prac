@@ -1,0 +1,88 @@
+#! /home/sunyong/Nuke11.3v1/libnuke-11.3.1.so -nx
+#write_info Write1 file:"" format:"360 240 1" chans:":rgba.red:rgba.green:rgba.blue:" framerange:"78471 78950" fps:"0" colorspace:"default" datatype:"unknown" transfer:"unknown" views:"main" colorManagement:"Nuke"
+version 11.3 v1
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="21" y="28" w="1487" h="1332" screen="0">
+        <splitter orientation="1">
+            <split size="40"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="824" stretch="1"/>
+            <splitter orientation="2">
+                <split size="753"/>
+                <dock id="" activePageId="Viewer.1">
+                    <page id="Viewer.1"/>
+                </dock>
+                <split size="529"/>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"/>
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+            <split size="615"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+                <page id="uk.co.thefoundry.backgroundrenderview.1"/>
+                <page id="uk.co.thefoundry.scripteditor.2"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name /home/sunyong/sea.nk
+ first_frame 78471
+ last_frame 78950
+ lock_range true
+ format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ colorManagement Nuke
+ workingSpaceLUT linear
+ monitorLut sRGB
+ int8Lut sRGB
+ int16Lut sRGB
+ logLut Cineon
+ floatLut linear
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x7171c600
+ label "sea\n"
+ note_font_size 42
+ xpos -45
+ ypos -246
+ bdheight 168
+}
+Viewer {
+ inputs 0
+ frame 1
+ frame_range 78471-78950
+ name Viewer1
+ xpos -40
+ ypos -9
+}
+Read {
+ inputs 0
+ file_type exr
+ file /project/circle/in/aces_exr/A003C025_150830_R0D0/A003C025_150830_R0D0.######.exr
+ format "360 240 0 0 360 240 1 "
+ first 78471
+ last 78950
+ origfirst 78471
+ origlast 78950
+ origset true
+ name Read1
+ xpos -35
+ ypos -166
+}
+Write {
+ name Write1
+ xpos -35
+ ypos -61
+}

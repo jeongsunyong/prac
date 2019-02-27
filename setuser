@@ -1,0 +1,26 @@
+#!/bin/sh
+
+
+OPEN=$(zenity --text-info --title="welcome" --text="반갑습니다. 동의하시면 설정 진행을 시작합니다." --checkbox="동의")
+case $? in
+	0)
+		ID=$(zenity --entry --title "ID" --text="ID")
+		NAME_ENG=$(zenity -- entry --title "name eng" --text="영문이름")
+		NAME_KOR=$(zenity --entry --title "name kor" --text="한글이름")
+		E_MAIL=$(zenity --entry --title "E-mail" --text="이메일(e-mail)")
+		PART=$(zenity --entry --title="Select Part" --text="팀(부서)를 선택해주세요."  team1 team2 team3)
+		TASK=$(zenity --entry --title="Select Task" --text="Task를 선택해주세요." task1 task2 task3)
+		(zenity --title="정보" --text="사용자 환경변수 설정이 완료되었습니다.")
+		echo "export ID="$ID"#sunyongenv" >> $HOME/centos/env/init.env
+		echo "export NAME_ENG = " $NAME_ENG "#sunyongenv" >> $HOME/centos/env/init.env
+		echo "export NAME_KOR = " $NAME_KOR "#sunyongenv" >> $HOME/centos/env/init.env
+		echo "export E_MAIL=$E_MAIL #sunyongenv" >> $HOME/centos/env/init.env
+		echo "export PART=$PART #sunyongenv" >> $HOME/centos/env/init.env
+		echo "export TASK=$TASK #sunyongenv" >> $HOME/centos/env/init.env
+		zenity --info --text="사용자 환경변수 설정이 완료되었습니다."
+		;;
+	1)
+		echo "quit";;
+	-1)
+		echo "quit";;
+esac

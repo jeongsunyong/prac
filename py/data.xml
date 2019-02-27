@@ -1,0 +1,16 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+    <project>
+        <name>circle</name>
+        <deadline>2020.01.13</deadline>
+    </project>
+    <shots>
+        <item>
+            <name>FOO_0010</name>
+        </item>
+        <item>
+            <name>BAR_0010</name>
+        </item>
+    </shots>
+</info>

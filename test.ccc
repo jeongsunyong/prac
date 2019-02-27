@@ -1,0 +1,23 @@
+<ColorCorrectionCollection xmlns="urn:ASC:CDL:v1.2">
+<ColorCorrection id="FOO_0010">
+        <SOPNode>
+             <Slope>2 1 1</Slope>
+             <Offset>0 0 0</Offset>
+             <Power>1 1 1</Power>
+        </SOPNode>
+        <SATNode>
+             <Saturation>1</Saturation>
+        </SATNode>
+</ColorCorrection>
+
+<ColorCorrection id="BAR_0010">
+        <SOPNode>
+             <Slope>2 1 1</Slope>
+             <Offset>0 0.1 0</Offset>
+             <Power>1 1 1</Power>
+        </SOPNode>
+        <SATNode>
+             <Saturation>1</Saturation>
+        </SATNode>
+</ColorCorrection>
+</ColorCorrectionCollection>
